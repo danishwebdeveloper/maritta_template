@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Template</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/stylesheet.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="slideshow">
+  <div class="slideset">
+    <div class="slide" style="background:url(images/banner.jpg);"></div>
+  </div>
+</div>
+<div class="side_menu">
+  <div id="sidebar-wrapper">
+    <nav class="sidebar-nav"> <a id="menu-close" href="#" class="toggle"><img src="images/close.png" width="24" height="25"/></a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="manu_footer">
+        <ul>
+          <li><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a target="_blank" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a target="_blank" href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+<div class="home_wrapper">
+  <div class="header">
+    <div class="col-lg-6 col-md-4 col-sm-12" style="text-align:left;">
+      <div class="logo_area">
+        <h1><a href="index.html">Maritta</a></h1>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6" id="newmenu"> <a id="menu-toggle" href="#" class="toggle"><img src="images/menu_btn.png" width="41" height="14"/></a> </div>
+  </div>
+</div>
+<div id="home_footer">
+  <div class="home_wrapper">
+    <div class="pull-left design_by">
+      <p>© 2018 Maritta Hallani</p>
+    </div>
+    <div class="pull-right social">
+      <ul>
+        <li><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a target="_blank" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a target="_blank" href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script> 
+<script type="text/javascript" src="js/jquery.main.js"></script> 
+<!-- Bootstrap Core JavaScript --> 
+<script src="js/bootstrap.min.js"></script> 
+<!-- Script to Activate the Carousel --> 
+<script>
+     $("#menu-close").click(function(e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+  });
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+  });
+    </script> 
+<script>
+   //Set the text of the numslide classes when the page is loaded
+$('.numslide').each(function(){
+	var total = $(this).parents('.carousel').find('.carousel-inner .item').length;
+	$(this).text('1');
+});
+
+$('.carousel').on('slid.bs.carousel', function () {
+  var carouselData = $(this).data('bs.carousel');
+  var currentIndex = carouselData.getActiveIndex();
+  var total = carouselData.$items.length;
+  // index is 0-based so add 1 to it
+  var txt = ' '+(currentIndex + 1)+'  ';
+  //MAKE SURE that each of your carousels has an element with the class numslide 
+  //you don't need to make them unique because we're using this to target 
+  $(this).find('.numslide').text(txt);
+});
+
+  $('.carousel').carousel({
+        interval: 5000, //changes the speed
+        pause: 'none'
+})
+    </script>
+</body>
+</html>
